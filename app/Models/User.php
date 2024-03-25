@@ -4,6 +4,8 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -16,11 +18,20 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+     
     protected $fillable = [
         'username',
         'email',
         'password',
     ];
+
+    public function chirps() : HasMany {
+        return $this->hasMany(Chirp::class);
+    }
+
+    public function userInformation() : HasOne {
+        return $this->hasOne(UserInformation::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

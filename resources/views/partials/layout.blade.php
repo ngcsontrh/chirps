@@ -1,7 +1,7 @@
 @include('partials.head')
 @include('partials.navbar')
         
-    <div class="container">
+    <div class="container-fluid">
         @yield('content')
         @if(session()->has('success'))
         <div class="toast-container position-fixed bottom-0 end-0">

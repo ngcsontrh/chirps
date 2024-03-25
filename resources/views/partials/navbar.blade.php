@@ -8,16 +8,19 @@
         <ul class="navbar-nav ms-auto">
           @auth
           <li class="nav-item">
-            <a class="nav-link" href="/logout">Logout</a>
+            <a class="nav-link" href="/profile">Thông tin tài khoản</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Đăng xuất</a>
           </li>
           @else
           <div class="dropdown">
             <li class="btn nav-item dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              Login
+              Tài khoản
             </li>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/login">Login</a></li>
-              <li><a class="dropdown-item" href="/register">Register</a></li>
+              <li><a class="dropdown-item" href="/login">Đăng nhập</a></li>
+              <li><a class="dropdown-item" href="/register">Đăng ký</a></li>
             </ul>
           </div>
           @endauth
